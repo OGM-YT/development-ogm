@@ -1,0 +1,92 @@
+[
+  {
+    "name": "NRW-RP-VC",
+    "invite": "https://discord.gg/KeDqtKpACW",
+    "description": "Willkommen auf NRW RP-VC.Ein EH Server spezialisiert auf Roleplay",
+    "tags": ["Roleplay", "Deutsch", "Notruf Hamburg", "Roblox"],
+    "members": 26,
+    "status": "aktiv",
+    "icon": "assets/logo-nrw2.png"
+  },
+  {
+    "name": "Grandcraft",
+    "invite": "https://discord.gg/GZ2tJN2hHJ",
+    "description": "Ein MC Server mit Original Helden 2 system.",
+    "tags": ["Minecraft", "Helden 2", "Deutsch"],
+    "members": 82,
+    "status": "aktiv",
+    "icon": "assets/logo-grandmc.png"
+  },
+ {
+    "name": "Grandcraft RP",
+    "invite": "https://discord.gg/pXW7YfMMEY",
+    "description": "Ein Geiler Notruf Hamburg Roleplay Server mit einem Guten Team.",
+    "tags": ["Roleplay", "Notruf Hamburg", "Deutsch", "Gaming Group"],
+    "members": 10,
+    "status": "Aufbau",
+    "icon": "assets/logo-grandrp.png"
+ },
+{
+    "name": "HeroSMP Community",
+    "invite": "https://discord.gg/9PdtMkKMf6",
+    "description": "Ein Ehemalieger SMP DC wird gerade umgebaut zu einer Community.",
+    "tags": ["DE", "Community", "Minecraft", "SMP"],
+    "members": 175,
+    "status": "Umbau",
+    "icon": "assets/logo-herosmp.png"
+ },
+{
+    "name": "CraftLegends",
+    "invite": "https://discord.gg/KNmWpNsCZM",
+    "description": "Einer meiner eigenen DC Server für Projekte mit Freunden.",
+    "tags": ["DE", "Vanilla", "Minecraft", "Freunde"],
+    "members": 12,
+    "status": "Aktiv",
+    "icon": "assets/logo-craftlegends.png"
+ },
+ {
+    "name": "OGM-YT Community",
+    "invite": "https://discord.gg/QNE6kQy3py",
+    "description": "Mein eigener Community DC von meinem YT kanal.",
+    "tags": ["DE", "Youtuber", "Community", "Gaming"],
+    "members": 38,
+    "status": "Aktiv",
+    "icon": "assets/logo-ogm-yt.png"
+ },
+ {
+    "name": "Be the Admin",
+    "invite": "https://discord.gg/KNmWpNsCZM",
+    "description": "Ein DC Server für das Roblox Game: Be the Admin.",
+    "tags": ["DE/EN", "Roblox", "Game", "Be The Admin"],
+    "members": 3,
+    "status": "Aufbau",
+    "icon": "assets/logo-betheadmin.png"
+ },
+ {
+    "name": "The white Kings",
+    "invite": "https://discord.gg/4upr7DgW8r",
+    "description": "Ein Gang DC von dem DC Server NRW RP-VC von Ugotsmurfed.",
+    "tags": ["Deutsch", "Roblox", "Gang-RP", "Notruf Hamburg"],
+    "members": 104,
+    "status": "Aktiv",
+    "icon": "assets/logo-twk.png"
+ },
+{
+    "name": "Kanzlei Eber & Specht",
+    "invite": "https://discord.gg/J9E2Fsjdta",
+    "description": " Ein Fraktion DC bzw. Anwalt DC für Roleplay bei Grandcraft RP.",
+    "tags": ["Deutsch", "Roblox", "Fraktions-RP", "Notruf Hamburg"],
+    "members": 7,
+    "status": "Aktiv",
+    "icon": "assets/logo-kes.png"
+ },
+{
+    "name": "Allianz Versicherung",
+    "invite": "https://discord.gg/hJPYPeazeE",
+    "description": " Ein Fraktion DC bzw. Allianz Versicherung´s DC für Roleplay bei NRW RP-VC von Ugotsmurfed.",
+    "tags": ["Deutsch", "Roblox", "Fraktions-RP", "Notruf Hamburg"],
+    "members": 23,
+    "status": "Aktiv",
+    "icon": "assets/logo-av.png"
+ }
+]
