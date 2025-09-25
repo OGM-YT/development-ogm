@@ -1,4 +1,4 @@
 echo > .nojekyll
 git add .nojekyll
 git commit -m "Disable Jekyll for static site"
-git push
+git push 
