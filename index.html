@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OGM – Discord Developer</title>
+  <meta name="description" content="Portfolio von OGM: betreute Discord-Server, News, Leistungen & Kontakt." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="icon" href="assets/logo.png" type="image/png" />
+</head>
+<body>
+  <canvas id="bg" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <a class="brand" href="#top" id="top">
+      <img src="assets/logo.png" alt="OGM Logo" class="logo" />
+      <div class="brand-text">
+        <h1>OGM</h1>
+        <p class="subtitle">Discord-Developer • Community-Builder • DC Server Builder • Sicherheitssystem´s</p>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a class="nav-link" href="news.html">News</a>
+      <a class="nav-link" href="#about">Über mich</a>
+      <a class="nav-link" href="#servers">Betreute DC-Server</a>
+      <a class="nav-link" href="#contact">Kontakt</a>
+      <a class="nav-link" href="impressum.html">Impressum</a>
+      <a class="nav-link" href="datenschutz.html">Datenschutz</a>
+    </nav>
+
+    <div class="header-spacer" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="hero-inner">
+        <h2>Discord developing vom Feinsten bei OGM</h2>
+        <p>Bots, Rollen-/Ticket-Systeme, Automod, Antiraid/Nuke-systems, Ganze DC Server und mehr – modular & performant.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#servers">Betreute DC-Server ansehen</a>
+          <a class="btn ghost" href="#contact">Projekt anfragen</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <h3 class="section-title">Über mich</h3>
+      <div class="about-grid">
+        <div class="about-card">
+          <h4>Wer ich bin</h4>
+          <p>Hi! Ich bin <strong>OGM</strong>, Discord-Developer für hochwertige Community-Erlebnisse. Aktuell betreue ich Circa. <strong>12 Discord-Server</strong> (Gaming, RP & Communities).</p>
+        </div>
+
+        <div class="about-card">
+          <h4>Was ich mache</h4>
+          <ul class="checklist">
+            <li>Custom Bots Installation</li>
+            <li>Custom Discord Server</li>
+            <li>Sicherheitssystem zb. Anti-Raid, Auto-Mod</li>
+            <li>Wiederherstellung von genuketen DC´s</li>
+            <li>Edle Kosmetiks für deinen DC Server</li>
+          </ul>
+        </div>
+
+        <div class="about-card">
+          <h4>Fiverr Store</h4>
+          <p>Leistungen als Paket? Schau in meinen Fiverr-Store vorbei – schnelle Abwicklung & klare Deliverables.</p>
+          <div class="mini-cta">
+            <a class="btn mini primary" href="http://www.fiverr.com/s/qDg1m39" target="_blank" rel="noopener">Zum Fiverr Store</a>
+          </div>
+        </div>
+
+        <div class="about-card">
+          <h4>Verfügbarkeit</h4>
+          <p>Neue Projekte nach Absprache. Sende mir kurz Art, Umfang/Deadline & Budgetrahmen – ich melde mich fix mit Vorschlag & Timeline.</p>
+          <div class="mini-cta">
+            <a class="btn mini ghost" href="#contact">Kontakt aufnehmen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servers" class="section">
+      <h3 class="section-title">Betreute Discord-Server</h3>
+
+      <div class="toolbar">
+        <div class="search-wrap">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zM9.5 14C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          <input id="search" type="search" placeholder="Server suchen … (Name, Tags, Beschreibung)" aria-label="Server suchen" />
+        </div>
+        <div class="tagbar" id="tagbar"></div>
+        <button class="btn mini" id="clearFilters" type="button">Filter löschen</button>
+      </div>
+
+      <div id="grid" class="grid" aria-live="polite"></div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <h3 class="section-title">Kontakt</h3>
+      <div class="contact-card">
+        <p>Direkt-DM & E-Mail hier, oder direkt über meine Email: ogmyt.busines@gmail.com</p>
+        <div class="cta-row">
+          <!-- Kontakt-Buttons -->
+<!-- Kontakt-Buttons (OHNE JS für Mail) -->
+<a class="btn primary" id="openDiscord"
+   href="discord://-/users/108262633711040052">Discord-DM öffnen</a>
+
+<a class="btn ghost" id="openDiscordWeb"
+   href="https://discord.com/users/108262633711040052" target="_blank" rel="noopener">
+   Im Browser öffnen
+</a>
+
+<!-- Mail direkt über mailto (keine JS-Interception, kein about:blank) -->
+<a class="btn ghost"
+   href="mailto:ogmyt.busines@gmail.com?subject=Projektanfrage%20OGM">
+   E-Mail senden (Im Test)
+</a>
+
+<!-- Optionaler zweiter Button: Gmail Compose im Browser -->
+<a class="btn ghost"
+   href="https://mail.google.com/mail/?view=cm&fs=1&to=ogmyt.busines@gmail.com&su=Projektanfrage%20OGM"
+   target="_blank" rel="noopener">
+   Mit Gmail senden
+</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <button id="toTop" class="to-top" aria-label="Zurück nach oben">↑</button>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> OGM - build with 💙 • <a href="news.html">News</a> • <a href="impressum.html">Impressum</a> • <a href="datenschutz.html">Datenschutz</a></p>
+  </footer>
+
+  <template id="card-tpl">
+    <article class="card">
+      <div class="card-header">
+        <img class="icon" alt="Server Icon">
+        <div class="titles">
+          <h4 class="name"></h4>
+          <div class="meta">
+            <span class="status"></span>
+            <span class="members"></span>
+          </div>
+        </div>
+      </div>
+      <p class="desc"></p>
+      <div class="tags"></div>
+      <div class="actions">
+        <a class="btn primary open" target="_blank" rel="noopener">Beitreten</a>
+        <button class="btn ghost copy" type="button">Link kopieren</button>
+      </div>
+    </article>
+  </template>
+
+  <script src="assets/script.js" defer></script>
+</body>
+</html>

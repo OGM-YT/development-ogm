@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>News – OGM</title>
+  <meta name="description" content="Neuigkeiten & Updates von OGM (Discord-Development)." />
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="icon" href="assets/logo.png" type="image/png" />
+</head>
+<body>
+  <canvas id="bg" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <a class="brand" href="index.html#top">
+      <img src="assets/logo.png" alt="OGM Logo" class="logo" />
+      <div class="brand-text">
+        <h1>OGM</h1>
+        <p class="subtitle">Discord-Developer • Community-Builder • DC Server Builder • Sicherheitssystem´s</p>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a class="nav-link" href="news.html">News</a>
+      <a class="nav-link" href="index.html#about">Über mich</a>
+      <a class="nav-link" href="index.html#servers">Betreute DC-Server</a>
+      <a class="nav-link" href="index.html#contact">Kontakt</a>
+      <a class="nav-link" href="impressum.html">Impressum</a>
+      <a class="nav-link" href="datenschutz.html">Datenschutz</a>
+    </nav>
+
+    <div class="header-spacer" aria-hidden="true"></div>
+  </header>
+
+  <main class="section">
+    <h2 class="section-title">News</h2>
+
+    <div class="toolbar">
+      <div class="search-wrap">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zM9.5 14C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        <input id="newsSearch" type="search" placeholder="News durchsuchen … (Titel, Tags, Text)" aria-label="News suchen" />
+      </div>
+      <div class="tagbar" id="newsTagbar"></div>
+      <button class="btn mini" id="newsClear" type="button">Filter löschen</button>
+    </div>
+
+    <div id="newsList" class="grid"></div>
+  </main>
+
+  <button id="toTop" class="to-top" aria-label="Zurück nach oben">↑</button>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> OGM- build with 💙 • <a href="news.html">News</a> • <a href="impressum.html">Impressum</a> • <a href="datenschutz.html">Datenschutz</a></p>
+  </footer>
+
+  <template id="news-card">
+    <article class="card">
+      <div class="card-header">
+        <img class="icon" src="assets/logo.png" alt="News Icon">
+        <div class="titles">
+          <h4 class="name"></h4>
+          <div class="meta">
+            <span class="status date"></span>
+            <span class="members category"></span>
+          </div>
+        </div>
+      </div>
+      <p class="desc"></p>
+      <div class="tags"></div>
+    </article>
+  </template>
+
+  <script>
+  // kleines News-Rendering, ohne separate Datei
+  const listEl = document.getElementById('newsList');
+  const tpl = document.getElementById('news-card');
+  const search = document.getElementById('newsSearch');
+  const tagbar = document.getElementById('newsTagbar');
+  const clearBtn = document.getElementById('newsClear');
+  const yearEl = document.getElementById('year'); if(yearEl) yearEl.textContent = new Date().getFullYear();
+
+  let NEWS = [], activeTags = new Set();
+
+  fetch('data/news.json').then(r=>r.json()).then(d=>{ NEWS=d; renderTags(); render(); });
+
+  function uniqTags(){ const s=new Set(); NEWS.forEach(n => (n.tags||[]).forEach(t=>s.add(t))); return [...s].sort(); }
+  function renderTags(){
+    tagbar.innerHTML='';
+    uniqTags().forEach(t=>{
+      const b=document.createElement('button');
+      b.className='tag'+(activeTags.has(t)?' active':'');
+      b.textContent=t;
+      b.onclick=()=>{ activeTags.has(t)?activeTags.delete(t):activeTags.add(t); renderTags(); render(); };
+      tagbar.appendChild(b);
+    });
+  }
+  function filtered(){
+    const q=(search.value||'').toLowerCase();
+    return NEWS.filter(n=>{
+      const text=[n.title,n.body,(n.tags||[]).join(' ')].join(' ').toLowerCase();
+      const matchesText=!q||text.includes(q);
+      const matchesTags=activeTags.size===0||(n.tags||[]).some(t=>activeTags.has(t));
+      return matchesText&&matchesTags;
+    }).sort((a,b)=> (b.date||'').localeCompare(a.date||''));
+  }
+  function render(){
+    listEl.innerHTML='';
+    const list=filtered();
+    if(list.length===0){ listEl.innerHTML='<p class="desc">Keine News gefunden.</p>'; return; }
+    list.forEach(n=>{
+      const node = tpl.content.cloneNode(true);
+      node.querySelector('.name').textContent = n.title || 'News';
+      node.querySelector('.date').textContent = n.date || '';
+      node.querySelector('.category').textContent = n.category || '';
+      node.querySelector('.desc').textContent = n.body || '';
+      const tags = node.querySelector('.tags');
+      (n.tags||[]).forEach(t=>{ const b=document.createElement('span'); b.className='badge'; b.textContent=t; tags.appendChild(b); });
+      listEl.appendChild(node);
+    });
+  }
+  search.addEventListener('input', render);
+  clearBtn.addEventListener('click', ()=>{ search.value=''; activeTags.clear(); renderTags(); render(); });
+  </script>
+  <script src="assets/script.js" defer></script>
+</body>
+</html>
